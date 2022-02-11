@@ -7,6 +7,8 @@ li,
 a {
   text-decoration: none;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 body,
@@ -568,7 +570,34 @@ input {
   }
 }
 
+@media (max-width: 1000px) {
+  .profile__tabs {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile__wrapper {
+    border-radius: 0px;
+  }
+}
+
 @media (max-width: 500px) {
+  .profile {
+    padding-top: 20px;
+  }
+  .profile__wrapper-block {
+    padding: 50px 20px 20px 20px;
+  }
+  .profile__tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    &-btn {
+      margin-bottom: 10px;
+      border-radius: 10px !important;
+    }
+  }
   h1 {
     font-size: 30px;
     line-height: 35px;
