@@ -1,6 +1,7 @@
 import SelectTreeModals from "./SelectTreeModals";
 import SelectTreeAdminModals from "./SelectTreeAdminModals";
 import SpecificalTreeModals from './SpecificalTreeModals';
+import PhotoModals from './PhotoModals';
 
 function Modal() {
   return (
@@ -13,6 +14,7 @@ function Modal() {
         <SelectTreeModals />
         <SelectTreeAdminModals />
         <SpecificalTreeModals />
+        <PhotoModals />
       </div>
     </div>
   );
