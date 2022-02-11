@@ -1,4 +1,7 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Modals from '@/components/modals/MainModals'
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
@@ -125,6 +128,13 @@ function Home() {
 
               <Tab className="profile__tabs-btn">
                 <div className="profile__tabs-btn_icon">
+                  <img src="images/gd-icon.svg" alt="" />
+                </div>
+                <div className="profile__tabs-btn_text">поcадить дерево</div>
+              </Tab>
+
+              <Tab className="profile__tabs-btn">
+                <div className="profile__tabs-btn_icon">
                   <img src="images/tree-icon.svg" alt="" />
                 </div>
                 <div className="profile__tabs-btn_text">мои деревья</div>
@@ -177,6 +187,17 @@ function Home() {
                       dignissimos, quisquam quis
                     </div>
                   </div>
+                </div>
+              </TabPanel>
+
+              <TabPanel className="profile__map">
+                <h2 className="profile__map-title">Карта посадки</h2>
+                <p className="profile__map-text">
+                  Выберите желаемое место для посадки вашего растения и
+                  заполните заявку.
+                </p>
+                <div className="profile__map-img">
+                  <img src="images/map.jpg" alt="" />
                 </div>
               </TabPanel>
 
@@ -255,6 +276,10 @@ function Home() {
           </Tabs>
         </div>
       </div>
+
+      <Footer />
+
+      <Modals />
     </section>
   );
 }

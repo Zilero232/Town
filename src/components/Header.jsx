@@ -8,25 +8,17 @@ function Header() {
       </NavLink>
       <nav className="menu">
         <li>
-          <NavLink
-            to={{ pathname: "/profile" }}
-            href="/"
-            activeClassName="active"
-          >
+          <NavLink to={{ pathname: "/profile" }} activeClassName="active">
             Профиль
           </NavLink>
         </li>
         <li>
-          <NavLink to={{ pathname: "/auth" }} href="/" activeClassName="active">
+          <NavLink to={{ pathname: "/auth" }} activeClassName="active">
             Авторизация
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to={{ pathname: "/register" }}
-            href="/"
-            activeClassName="active"
-          >
+          <NavLink to={{ pathname: "/register" }} activeClassName="active">
             Регистрация
           </NavLink>
         </li>
