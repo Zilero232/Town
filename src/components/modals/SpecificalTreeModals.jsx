@@ -9,6 +9,7 @@ function SelectTree() {
             </span>
             зима
           </div>
+
           <div className="specifical-tree__sitebar-status">
             <div className="specifical-tree__sitebar-item specifical-tree__sitebar-water">
               <div className="specifical-tree__sitebar-item_left">
@@ -57,6 +58,15 @@ function SelectTree() {
               </div>
             </div>
           </div>
+
+          <button className="specifical-tree__sitebar-photo">
+            <div className="specifical-tree__sitebar-photo_icon">
+              <img src="images/photo-icon.svg" alt="" />
+            </div>
+            <div className="specifical-tree__sitebar-photo_text">
+              фотоальбом
+            </div>
+          </button>
         </div>
 
         <div className="specifical-tree__block">

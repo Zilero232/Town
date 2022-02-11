@@ -170,6 +170,22 @@ input {
       &:nth-child(1) {
         a {
           text-transform: uppercase;
+          position: relative;
+          &:before {
+            content: "";
+            width: 0%;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition: all 0.4s;
+          }
+          &:hover {
+            &:before {
+              width: 100%;
+            }
+          }
         }
         li {
           margin-bottom: 16px;
@@ -259,8 +275,34 @@ input {
   }
 }
 
+.auth {
+  padding: 70px 0 0 0;
+  .container {
+    width: 100%;
+  }
+  .register {
+    padding: 10px 0 300px 0;
+    &__form {
+      margin: 30px auto 0 auto;
+      box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.25);
+      &-submit {
+        transition: all 0.4s;
+        button {
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+          border-radius: 50%;
+          height: 72px;
+          width: 72px;
+          margin: 0 auto;
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
 .register {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -789,9 +831,31 @@ input {
         background: #e8672f;
       }
     }
+    &-photo {
+      display: flex;
+      align-items: center;
+      background: #004a22;
+      margin-top: 90px;
+      padding: 5px 45px 5px 12px;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #ffffff;
+      border-radius: 20px;
+      &_icon {
+        display: flex;
+        align-items: center;
+      }
+      &_text {
+        margin-left: 10px;
+      }
+    }
   }
   &__block {
     text-align: center;
+    &-img {
+      max-width: 400px;
+    }
   }
   &__decoration {
     display: flex;
@@ -863,10 +927,8 @@ input {
     display: flex;
     justify-content: center;
     &-btn {
-      background: #5ebaee;
       width: 176px;
       height: 36px;
-      background: #5ebaee;
       border-radius: 40px;
       margin: 0 20px;
       font-family: "centuryBold";
@@ -874,12 +936,31 @@ input {
       line-height: 15px;
       text-transform: uppercase;
       color: #ffffff;
+      transition: all 0.4s;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+    &-pour {
+      background: #5ebaee;
+      border: 1px solid #5ebaee;
+      &:hover {
+        color: #5ebaee;
+      }
     }
     &-fertilize {
       background: #3eab2c;
+      border: 1px solid #3eab2c;
+      &:hover {
+        color: #3eab2c;
+      }
     }
     &-warp {
       background: #e8672f;
+      border: 1px solid #e8672f;
+      &:hover {
+        color: #e8672f;
+      }
     }
   }
 }
@@ -921,8 +1002,11 @@ input {
 
 .select-tree,
 .select-tree-admin,
-.specifical-tree,
 .photo-modals,
+.specifical-tree {
+  display: none;
+}
+
 .modals {
   display: none;
 }
