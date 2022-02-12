@@ -10,7 +10,7 @@ function PhotoModals() {
     {
       date: "10.02.2022",
       text: "полив",
-      img: "images/photo/item-1.jpg",
+      img: "",
     },
     {
       date: "10.02.2022",
@@ -58,9 +58,15 @@ function PhotoModals() {
             return (
               <SwiperSlide
                 key={idx}
-                className="photo-modals__wrapper-item"
-                style={{ backgroundImage: `url(${item.img})` }}
+                className={`photo-modals__wrapper-item ${
+                  !item.img ? "not-photo" : ""
+                }`}
               >
+                <div
+                  className="photo-modals__wrapper-item_img"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                ></div>
+                <button className="photo-modals__wrapper-item_plus">+</button>
                 <div className="photo-modals__wrapper-item_content">
                   <div className="photo-modals__wrapper-item_date">
                     {item.date}
