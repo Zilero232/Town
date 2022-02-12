@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-function PhotoModals({show, toggle}) {
+function PhotoModals({ show, toggle, toggleAdd }) {
   const trees = [
     {
       date: "10.02.2022",
@@ -33,9 +33,9 @@ function PhotoModals({show, toggle}) {
       img: "images/photo/item-1.jpg",
     },
   ];
- 
+
   return (
-    <div className="photo-modals" style={{display: show ? 'block' : 'none'}}>
+    <div className="photo-modals" style={{ display: show ? "block" : "none" }}>
       <h2 className="modals__title">фотоальбом</h2>
       <div className="photo-modals__wrapper">
         <Swiper
@@ -61,6 +61,7 @@ function PhotoModals({show, toggle}) {
                 className={`photo-modals__wrapper-item ${
                   !item.img ? "not-photo" : ""
                 }`}
+                onClick={() => item.img === "" && toggleAdd()}
               >
                 <div
                   className="photo-modals__wrapper-item_img"

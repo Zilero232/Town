@@ -1191,6 +1191,12 @@ input {
   }
 }
 
+.register__form-submit {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 .select-tree-admin__selected {
   display: flex;
   position: absolute;
@@ -1226,7 +1232,7 @@ input {
 .select-tree-admin,
 .photo-modals,
 .specifical-tree,
-.add-photo-modals, {
+.add-photo-modals,
 .specifical-tree {
   display: none;
 }

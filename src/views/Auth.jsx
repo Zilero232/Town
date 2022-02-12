@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function Home() {
+  const [login, setLogin] = useState("");
   return (
     <div className="auth">
       <div
@@ -17,7 +19,11 @@ function Home() {
             <div className="register__form-wrapper">
               <div className="register__form-input">
                 <label htmlFor="">логин</label>
-                <input type="text" />
+                <input
+                  value={login}
+                  onInput={(e) => setLogin(e.target.value)}
+                  type="text"
+                />
               </div>
 
               <div className="register__form-input">
@@ -26,9 +32,14 @@ function Home() {
               </div>
 
               <div className="register__form-submit">
-                <button as={NavLink}  to={{pathname: '/profile'}}>
+                <NavLink
+                  to={{
+                    pathname:
+                      login === "admin" ? "/profile?admin=true" : "/profile",
+                  }}
+                >
                   <img src="images/auth-submit.svg" alt="" />
-                </button>
+                </NavLink>
               </div>
 
               <div className="register__form-text">

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { useModal } from "@/hooks";
-import qs from 'qs'
+import qs from "qs";
 
 import "react-tabs/style/react-tabs.css";
 import "swiper/css";
@@ -13,25 +13,23 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Home() {
+  const { search } = useLocation();
 
-  const {search} = useLocation()
+  const { admin } = qs.parse(search, {
+    ignoreQueryPrefix: true,
+  });
 
-const {admin} = qs.parse(search, {
-  ignoreQueryPrefix: true
-}) 
+  useEffect(() => {
+    if (admin) setAdmin(true);
+  }, [admin]);
 
-useEffect(() => {
-  if(admin)
-    setAdmin(true)
-}, [admin])
+  const [isAdmin, setAdmin] = useState(false);
 
-const [isAdmin, setAdmin] = useState(false)
-
-const [, toggleModal] = useModal() 
+  const [, toggleModal] = useModal();
 
   const trees = [
     {
-      title: "Пушкин", 
+      title: "Пушкин",
       type: "дуб",
       date: "10.02.2022",
       cordinaty: "58.5 58.5",
@@ -106,7 +104,7 @@ const [, toggleModal] = useModal()
     {
       title: "МОЙ КУСТАРНИК",
       type: "можжвельник",
-      date: "10.02.2022", 
+      date: "10.02.2022",
       cordinaty: "58.5 58.5",
       img: "images/flowers/schubs-1.png",
     },
@@ -150,7 +148,9 @@ const [, toggleModal] = useModal()
                 <div className="profile__tabs-btn_icon">
                   <img src="images/gd-icon.svg" alt="" />
                 </div>
-                <div className="profile__tabs-btn_text">{ isAdmin ? 'редактирование карты' : 'посадить дерево' }</div>
+                <div className="profile__tabs-btn_text">
+                  {isAdmin ? "редактирование карты" : "посадить дерево"}
+                </div>
               </Tab>
 
               <Tab className="profile__tabs-btn">
@@ -168,7 +168,7 @@ const [, toggleModal] = useModal()
                     Павлов Сергей Евгеньевич
                   </div>
                   <div className="profile__wrapper-block_aflaid">
-                    { isAdmin ? 'Администратор' : 'Гражданин'}
+                    {isAdmin ? "Администратор" : "Гражданин"}
                   </div>
                   <div className="profile__wrapper-info">
                     <div className="profile__wrapper-info_block">
@@ -250,7 +250,7 @@ const [, toggleModal] = useModal()
                           </div>
                           <div className="profile__flowers-block_content">
                             <div className="profile__flowers-block_title">
-                              {item.title} 
+                              {item.title}
                             </div>
                             <div className="profile__flowers-block_type">
                               Вид: {item.type}
@@ -260,10 +260,14 @@ const [, toggleModal] = useModal()
                             </div>
                             <div className="profile__flowers-block_coordinate">
                               Координаты: {item.cordinaty}
-                            </div> 
-                          </div> 
+                            </div>
+                          </div>
                           <div className="profile__flowers-block_btn">
-                            <button onClick={() => toggleModal('specifical-tree')}>ПОДРОБНЕЕ</button>
+                            <button
+                              onClick={() => toggleModal("specifical-tree")}
+                            >
+                              ПОДРОБНЕЕ
+                            </button>
                           </div>
                         </SwiperSlide>
                       );
@@ -309,11 +313,15 @@ const [, toggleModal] = useModal()
                               Дата посадки: {item.date}
                             </div>
                             <div className="profile__flowers-block_coordinate">
-                              Координаты: {item.cordinaty} 
+                              Координаты: {item.cordinaty}
                             </div>
                           </div>
                           <div className="profile__flowers-block_btn">
-                            <button onClick={() => toggleModal('specifical-tree')}>ПОДРОБНЕЕ</button>
+                            <button
+                              onClick={() => toggleModal("specifical-tree")}
+                            >
+                              ПОДРОБНЕЕ
+                            </button>
                           </div>
                         </SwiperSlide>
                       );

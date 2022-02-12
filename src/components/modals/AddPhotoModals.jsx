@@ -1,6 +1,9 @@
-function addPhotoModals() {
+function addPhotoModals({ show, toggle }) {
   return (
-    <div className="add-photo-modals">
+    <div
+      className="add-photo-modals"
+      style={{ display: show ? "block" : "none" }}
+    >
       <h2 className="modals__title">добавить фото</h2>
       <div className="add-photo-modals__wrapper">
         <div className="add-photo-modals__wrapper-item">
