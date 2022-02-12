@@ -170,7 +170,6 @@ const [, toggleModal] = useModal()
                   <div className="profile__wrapper-block_aflaid">
                     { isAdmin ? 'Администратор' : 'Гражданин'}
                   </div>
- 
                   <div className="profile__wrapper-info">
                     <div className="profile__wrapper-info_block">
                       <div className="profile__wrapper-info_title">e-mail</div>
@@ -195,12 +194,17 @@ const [, toggleModal] = useModal()
                       </div>
                     </div>
                   </div>
-
                   <div className="profile__wrapper-about">
                     <div className="profile__wrapper-about_title">о себе</div>
                     <div className="profile__wrapper-about_text">
                       Небольшая информация о себе
                     </div>
+                  </div>
+                  <a href="#orders" className="profile__wrapper-button_order">
+                    перейти к заявкам
+                  </a>
+                  <div className="profile__wrapper-button_arrow">
+                    <img src="images/arrow-order-btn.svg" alt="" />
                   </div>
                 </div>
               </TabPanel>
@@ -319,6 +323,57 @@ const [, toggleModal] = useModal()
               </TabPanel>
             </div>
           </Tabs>
+        </div>
+      </div>
+
+      <div className="profile__orders" id="orders">
+        <div className="container">
+          <h1 className="profile__orders-title">список заявок</h1>
+          <table className="profile__orders-table">
+            <thead>
+              <tr>
+                <th>№ заявки</th>
+                <th>фио</th>
+                <th>координаты</th>
+                <th>ДЕРЕВО/КУСТ</th>
+                <th>действия </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>1056</td>
+                <td>Павлов сергей евгеньевич</td>
+                <td>°31.2786′ с.ш. Долгота: 31°16.2624′ в.д.</td>
+                <td>кустарник</td>
+                <td className="profile__orders-buttons">
+                  <button className="profile__orders-success">
+                    <img src="images/table-success.svg" alt="" />
+                  </button>
+
+                  <button className="profile__orders-close">
+                    <img src="images/close-table.svg" alt="" />
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>1056</td>
+                <td>Павлов сергей евгеньевич</td>
+                <td>°31.2786′ с.ш. Долгота: 31°16.2624′ в.д.</td>
+                <td>кустарник</td>
+                <td className="profile__orders-buttons">
+                  <button className="profile__orders-success">
+                    <img src="images/table-success.svg" alt="" />
+                  </button>
+
+                  <button className="profile__orders-close">
+                    <img src="images/close-table.svg" alt="" />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 

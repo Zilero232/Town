@@ -125,6 +125,12 @@ function SelectTree({show, toggle}) {
         <div className="select-tree-admin__point">
           <button onClick={toggle}>Создать точку</button>
         </div>
+        <div className="select-tree-admin__selected">
+          <button className="select-tree-admin__selected-btn active">
+            ДЕРЕВЬЯ
+          </button>
+          <button className="select-tree-admin__selected-btn">КУСТЫ</button>
+        </div>
       </div>
     </div>
   );
