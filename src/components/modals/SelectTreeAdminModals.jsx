@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-function SelectTree() {
+function SelectTree({show, toggle}) {
   const trees = [
     {
       title: "Пушкин",
@@ -53,7 +53,7 @@ function SelectTree() {
   ];
 
   return (
-    <div className="select-tree-admin">
+    <div className="select-tree-admin" style={{display: show ? 'block' : 'none'}}>
       <div className="select-tree-admin__wrapper">
         <h2 className="modals__title">
           вЫБЕРИТЕ растения,которые будут доступны для посадки
@@ -123,7 +123,7 @@ function SelectTree() {
         </Swiper>
 
         <div className="select-tree-admin__point">
-          <button>Создать точку</button>
+          <button onClick={toggle}>Создать точку</button>
         </div>
         <div className="select-tree-admin__selected">
           <button className="select-tree-admin__selected-btn active">

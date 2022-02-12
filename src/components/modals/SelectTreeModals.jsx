@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-function SelectTree() {
+function SelectTree({show, toggle}) {
   const trees = [
     {
       title: "Пушкин",
@@ -29,7 +29,7 @@ function SelectTree() {
       date: "10.02.2022",
       cordinaty: 20,
       img: "images/flowers/item-1.png",
-    },
+    }, 
     {
       title: "Пушкин",
       type: "дуб",
@@ -46,8 +46,8 @@ function SelectTree() {
     },
   ];
 
-  return (
-    <div className="select-tree">
+  return (  
+    <div className="select-tree" style={{display: show ? 'block' : 'none'}}> 
       <div className="select-tree__wrapper">
         <h2 className="modals__title">Выберите дерево</h2>
 
@@ -88,7 +88,7 @@ function SelectTree() {
                   </div>
                 </div>
                 <div className="profile__flowers-block_btn">
-                  <button>ПОДРОБНЕЕ</button>
+                  <button>Выбрать</button>
                 </div>
               </SwiperSlide>
             );

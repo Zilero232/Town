@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "@/views/Home";
 import Profile from "@/views/Profile";
 import Register from "@/views/Register";
 import Auth from "@/views/Auth";
+import MainModals from "@/components/modals/MainModals";
+import { useModal } from "./hooks";
 
 function App() {
+  const [, , isActiveModal] = useModal();
+
+  useEffect(() => {
+    document.body.style.overflow = isActiveModal ? "hidden" : "auto";
+  }, [isActiveModal]);
+
   return (
     <div className="App main">
       <BrowserRouter>
@@ -17,6 +25,7 @@ function App() {
           <Route path="/auth" element={<Auth />} />
         </Routes>
       </BrowserRouter>
+      <MainModals />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -25,7 +26,7 @@ function Home() {
               </div>
 
               <div className="register__form-submit">
-                <button type="submit">
+                <button as={NavLink}  to={{pathname: '/profile'}}>
                   <img src="images/auth-submit.svg" alt="" />
                 </button>
               </div>
