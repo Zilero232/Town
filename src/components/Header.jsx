@@ -1,8 +1,23 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpened) {
+      document.body.classList.add("mobile-open");
+    } else {
+      document.body.classList.remove("mobile-open");
+    }
+  }, [isMenuOpened]);
+
+  const onToggleBar = () => {
+    setIsMenuOpened((x) => !x);
+  };
+
   return (
-    <header className="header">
+    <header className={`header`}>
       <NavLink to={{ pathname: "/" }} className="logo">
         <img src="images/logo.svg" alt="" />
       </NavLink>
@@ -23,7 +38,7 @@ function Header() {
           </NavLink>
         </li>
       </nav>
-      <button className="bar">
+      <button className="bar" onClick={onToggleBar}>
         <div className="bar__item"></div>
         <div className="bar__item"></div>
         <div className="bar__item"></div>

@@ -59,7 +59,22 @@ function SelectTree() {
           вЫБЕРИТЕ растения,которые будут доступны для посадки
         </h2>
 
-        <Swiper spaceBetween={25} slidesPerView={3.4}>
+        <Swiper
+          breakpoints={{
+            1200: {
+              spaceBetween: 25,
+              slidesPerView: 3.4,
+            },
+            768: {
+              spaceBetween: 25,
+              slidesPerView: 2,
+            },
+            320: {
+              spaceBetween: 25,
+              slidesPerView: 1,
+            },
+          }}
+        >
           {trees.map((item, idx) => {
             return (
               <SwiperSlide

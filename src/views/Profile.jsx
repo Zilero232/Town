@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Modals from '@/components/modals/MainModals'
+import Modals from "@/components/modals/MainModals";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -204,7 +204,22 @@ function Home() {
               <TabPanel className="profile__flowers">
                 <h2 className="profile__flowers-title">МОИ ДЕРЕВЬЯ</h2>
                 <div className="profile__flowers-block">
-                  <Swiper spaceBetween={25} slidesPerView={3.4}>
+                  <Swiper
+                    breakpoints={{
+                      1200: {
+                        spaceBetween: 25,
+                        slidesPerView: 3.4,
+                      },
+                      768: {
+                        spaceBetween: 25,
+                        slidesPerView: 2,
+                      },
+                      320: {
+                        spaceBetween: 25,
+                        slidesPerView: 1,
+                      },
+                    }}
+                  >
                     {trees.map((item, idx) => {
                       return (
                         <SwiperSlide
@@ -239,7 +254,22 @@ function Home() {
 
                 <h2 className="profile__flowers-title">Мои кустраники</h2>
                 <div className="profile__flowers-block">
-                  <Swiper spaceBetween={25} slidesPerView={3.4}>
+                  <Swiper
+                    breakpoints={{
+                      1200: {
+                        spaceBetween: 25,
+                        slidesPerView: 3.4,
+                      },
+                      768: {
+                        spaceBetween: 25,
+                        slidesPerView: 2,
+                      },
+                      320: {
+                        spaceBetween: 25,
+                        slidesPerView: 1,
+                      },
+                    }}
+                  >
                     {shrubs.map((item, idx) => {
                       return (
                         <SwiperSlide

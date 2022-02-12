@@ -38,7 +38,22 @@ function PhotoModals() {
     <div className="photo-modals">
       <h2 className="modals__title">фотоальбом</h2>
       <div className="photo-modals__wrapper">
-        <Swiper spaceBetween={25} slidesPerView={3.4}>
+        <Swiper
+          breakpoints={{
+            1200: {
+              spaceBetween: 25,
+              slidesPerView: 3.4,
+            },
+            630: {
+              spaceBetween: 25,
+              slidesPerView: 2,
+            },
+            320: {
+              spaceBetween: 25,
+              slidesPerView: 1,
+            },
+          }}
+        >
           {trees.map((item, idx) => {
             return (
               <SwiperSlide
