@@ -1,6 +1,6 @@
-function SelectTree() {
+function SelectTree({show, toggle, togglePhoto}) {
   return (
-    <div className="specifical-tree">
+    <div className="specifical-tree" style={{display: show ? 'block' : 'none'}}>
       <div className="specifical-tree__wrapper">
         <div className="specifical-tree__sitebar">
           <div className="specifical-tree__sitebar-times">
@@ -59,7 +59,7 @@ function SelectTree() {
             </div>
           </div>
 
-          <button className="specifical-tree__sitebar-photo">
+          <button className="specifical-tree__sitebar-photo" onClick={togglePhoto}>
             <div className="specifical-tree__sitebar-photo_icon">
               <img src="images/photo-icon.svg" alt="" />
             </div>

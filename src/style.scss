@@ -32,6 +32,35 @@ button {
   outline: none;
 }
 
+.map-settings {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  right: 20px;
+  list-style: none;
+}
+
+.map-settings svg {
+  color: rgb(164, 163, 163);
+}
+
+.map-settings svg:hover {
+  color: rgb(255, 255, 255);
+}
+
+.map-settings .icon[data-active="true"] svg {
+  color: rgb(255, 255, 255);
+}
+
+.map-settings .icon[data-active="true"] svg:hover {
+  color: rgb(164, 163, 163);
+}
+
+.map-settings .icon + .icon {
+  padding-left: 8px;
+}
+
 @font-face {
   font-family: "centuryBold";
   src: url("../public/fonts/CenturyGothic-Bold.ttf");
@@ -283,6 +312,13 @@ input {
   .register {
     padding: 10px 0 300px 0;
     &__form {
+      &-sber {
+        background-color: #37a34f;
+      }
+      &-vk {
+        background-color: #035fe2;
+      }
+
       margin: 30px auto 0 auto;
       box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.25);
       &-submit {
@@ -375,7 +411,6 @@ input {
         margin-bottom: 7px;
         width: 100%;
         height: 38px;
-        background: #37a34f;
         border-radius: 50px;
         position: relative;
         .btn__icon {
@@ -403,6 +438,9 @@ input {
 
 .profile {
   padding: 50px 0 0 0;
+  &__map-img > div {
+    position: relative;
+  }
   &__tabs {
     display: flex;
     align-items: center;
@@ -1008,14 +1046,13 @@ input {
 
 .select-tree,
 .select-tree-admin,
-.photo-modals
-.specifical-tree 
-{
+.photo-modals,
+.specifical-tree {
   display: none;
 }
 
 .modals {
-  display: none;
+  // display: none;
 }
 
 @media (max-width: 1400px) {
@@ -1118,6 +1155,7 @@ input {
   .profile__map {
     padding: 30px;
   }
+
   .profile {
     padding-top: 20px;
   }

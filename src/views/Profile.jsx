@@ -1,55 +1,59 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Modals from "@/components/modals/MainModals";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { useModal } from "@/hooks";
 
 import "react-tabs/style/react-tabs.css";
 import "swiper/css";
+import { MapBlock } from "../components/Map";
 
 function Home() {
+
+const [, toggleModal] = useModal() 
+
   const trees = [
     {
-      title: "Пушкин",
+      title: "Пушкин", 
       type: "дуб",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/item-1.png",
     },
     {
-      title: "Пушкин",
+      title: "Моё дерево",
       type: "дуб",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/item-1.png",
     },
     {
-      title: "Пушкин",
+      title: "Моё дерево",
       type: "дуб",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/item-1.png",
     },
     {
-      title: "Пушкин",
+      title: "Моё дерево",
       type: "дуб",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/item-1.png",
     },
     {
-      title: "Пушкин",
+      title: "Моё дерево",
       type: "дуб",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/item-1.png",
     },
     {
-      title: "Пушкин",
+      title: "Моё дерево",
       type: "дуб",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/item-1.png",
     },
   ];
@@ -59,49 +63,49 @@ function Home() {
       title: "МОЙ КУСТАРНИК",
       type: "можжвельник",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/schubs-1.png",
     },
     {
       title: "МОЙ КУСТАРНИК",
       type: "можжвельник",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/schubs-1.png",
     },
     {
       title: "МОЙ КУСТАРНИК",
       type: "можжвельник",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/schubs-1.png",
     },
     {
       title: "МОЙ КУСТАРНИК",
       type: "можжвельник",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
+      img: "images/flowers/schubs-1.png",
+    },
+    {
+      title: "МОЙ КУСТАРНИК",
+      type: "можжвельник",
+      date: "10.02.2022", 
+      cordinaty: "58.5 58.5",
       img: "images/flowers/schubs-1.png",
     },
     {
       title: "МОЙ КУСТАРНИК",
       type: "можжвельник",
       date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/schubs-1.png",
     },
     {
       title: "МОЙ КУСТАРНИК",
       type: "можжвельник",
       date: "10.02.2022",
-      cordinaty: 20,
-      img: "images/flowers/schubs-1.png",
-    },
-    {
-      title: "МОЙ КУСТАРНИК",
-      type: "можжвельник",
-      date: "10.02.2022",
-      cordinaty: 20,
+      cordinaty: "58.5 58.5",
       img: "images/flowers/schubs-1.png",
     },
   ];
@@ -145,12 +149,12 @@ function Home() {
               <TabPanel className="profile__wrapper">
                 <div className="profile__wrapper-block">
                   <div className="profile__wrapper-block_name">
-                    Артемьев Александр Царевич
+                    Павлов Сергей Евгеньевич
                   </div>
                   <div className="profile__wrapper-block_aflaid">
-                    Грандженин Работяга
+                    Гражданин
                   </div>
-
+ 
                   <div className="profile__wrapper-info">
                     <div className="profile__wrapper-info_block">
                       <div className="profile__wrapper-info_title">e-mail</div>
@@ -179,12 +183,7 @@ function Home() {
                   <div className="profile__wrapper-about">
                     <div className="profile__wrapper-about_title">о себе</div>
                     <div className="profile__wrapper-about_text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Rerum consequuntur, dicta, corrupti mollitia blanditiis
-                      consectetur ea corporis autem vero impedit sed culpa?
-                      Optio repellat corrupti magni id cum laborum non
-                      asperiores deserunt, temporibus cumque recusandae quo in
-                      dignissimos, quisquam quis
+                      Небольшая информация о себе
                     </div>
                   </div>
                 </div>
@@ -197,7 +196,7 @@ function Home() {
                   заполните заявку.
                 </p>
                 <div className="profile__map-img">
-                  <img src="images/map.jpg" alt="" />
+                  <MapBlock isAdmin={true} />
                 </div>
               </TabPanel>
 
@@ -231,7 +230,7 @@ function Home() {
                           </div>
                           <div className="profile__flowers-block_content">
                             <div className="profile__flowers-block_title">
-                              {item.title}
+                              {item.title} 
                             </div>
                             <div className="profile__flowers-block_type">
                               Вид: {item.type}
@@ -240,11 +239,11 @@ function Home() {
                               Дата посадки: {item.date}
                             </div>
                             <div className="profile__flowers-block_coordinate">
-                              Координат: {item.cordinaty}
-                            </div>
-                          </div>
+                              Координаты: {item.cordinaty}
+                            </div> 
+                          </div> 
                           <div className="profile__flowers-block_btn">
-                            <button>ПОДРОБНЕЕ</button>
+                            <button onClick={() => toggleModal('specifical-tree')}>ПОДРОБНЕЕ</button>
                           </div>
                         </SwiperSlide>
                       );
@@ -252,7 +251,7 @@ function Home() {
                   </Swiper>
                 </div>
 
-                <h2 className="profile__flowers-title">Мои кустраники</h2>
+                <h2 className="profile__flowers-title">Мои кустарники</h2>
                 <div className="profile__flowers-block">
                   <Swiper
                     breakpoints={{
@@ -290,11 +289,11 @@ function Home() {
                               Дата посадки: {item.date}
                             </div>
                             <div className="profile__flowers-block_coordinate">
-                              Координат: {item.cordinaty}
+                              Координаты: {item.cordinaty} 
                             </div>
                           </div>
                           <div className="profile__flowers-block_btn">
-                            <button>ПОДРОБНЕЕ</button>
+                            <button onClick={() => toggleModal('specifical-tree')}>ПОДРОБНЕЕ</button>
                           </div>
                         </SwiperSlide>
                       );
@@ -308,8 +307,6 @@ function Home() {
       </div>
 
       <Footer />
-
-      <Modals />
     </section>
   );
 }
