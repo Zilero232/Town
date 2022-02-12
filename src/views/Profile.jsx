@@ -4,12 +4,28 @@ import Footer from "@/components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { useModal } from "@/hooks";
+import qs from 'qs'
 
 import "react-tabs/style/react-tabs.css";
 import "swiper/css";
 import { MapBlock } from "../components/Map";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Home() {
+
+  const {search} = useLocation()
+
+const {admin} = qs.parse(search, {
+  ignoreQueryPrefix: true
+}) 
+
+useEffect(() => {
+  if(admin)
+    setAdmin(true)
+}, [admin])
+
+const [isAdmin, setAdmin] = useState(false)
 
 const [, toggleModal] = useModal() 
 
@@ -134,7 +150,7 @@ const [, toggleModal] = useModal()
                 <div className="profile__tabs-btn_icon">
                   <img src="images/gd-icon.svg" alt="" />
                 </div>
-                <div className="profile__tabs-btn_text">поcадить дерево</div>
+                <div className="profile__tabs-btn_text">{ isAdmin ? 'редактирование карты' : 'посадить дерево' }</div>
               </Tab>
 
               <Tab className="profile__tabs-btn">
@@ -152,7 +168,7 @@ const [, toggleModal] = useModal()
                     Павлов Сергей Евгеньевич
                   </div>
                   <div className="profile__wrapper-block_aflaid">
-                    Гражданин
+                    { isAdmin ? 'Администратор' : 'Гражданин'}
                   </div>
  
                   <div className="profile__wrapper-info">
@@ -196,7 +212,7 @@ const [, toggleModal] = useModal()
                   заполните заявку.
                 </p>
                 <div className="profile__map-img">
-                  <MapBlock isAdmin={true} />
+                  <MapBlock isAdmin={isAdmin} />
                 </div>
               </TabPanel>
 
